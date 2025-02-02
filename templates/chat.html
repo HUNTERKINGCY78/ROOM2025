@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat Room</title>
+</head>
+<body>
+    <h2>Room Chat</h2>
+    <a href="/logout">Logout</a>
+    <form method="POST" action="/send" enctype="multipart/form-data">
+        <textarea name="message" placeholder="Tulis pesan di sini..." required></textarea><br>
+        <label>Upload File (Foto/Video):</label><br>
+        <input type="file" name="file"><br><br>
+        <button type="submit">Send</button>
+    </form>
+
+    <h3>Messages</h3>
+    <ul>
+        {% for msg in messages %}
+            <li>{{ msg }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
